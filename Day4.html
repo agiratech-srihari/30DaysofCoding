@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+            constructor(initialAge) {
+                if (initialAge < 0) {
+                    this.age = 0;
+                } else {
+                    this.age = initialAge;
+                }
+            }
+
+            iamold=function() {
+                if (this.age < 13) {
+                    console.log("You are young.");
+                } else if (this.age >= 13 && this.age < 18) {
+                    console.log("You are a teenager.");
+                } else {
+                    console.log("You are old.")
+                }
+            }
+        }
+
+        let person = new Person(20);
+        person.iamold()
+
+
+    </script>
+</body>
+</html>
