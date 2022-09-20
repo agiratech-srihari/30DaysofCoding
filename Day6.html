@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let S = prompt ("enter a text");
+        let N = S.length;
+        let e = '';
+        let o =''; 
+        for (let i = 0;i < N;i++){
+            if(i%2 == 1){
+               o += S[i]; 
+               // console.log("odd")
+                // console.log(o);
+            }
+            else{
+                e +=S[i];
+                // console.log("even")
+                // console.log(e);
+            }
+        }
+        console.log( e + "  " + o);
+
+    </script>
+</body>
+</html>
