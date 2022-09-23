@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hello=`3
+sam 99912222            
+tom 11122222
+harry 12299933
+sam            
+edward
+harry`
+console.log(hello)
+function map(input) {
+    let phoneDirectory={};
+    let i=0;
+    let test=input.replace(/\n/g," ").split(" ");
+    for(i=0;i<test[0];i++){
+        phoneDirectory[test[2*i+1]]=test[2*i+2];
+    }
+    // console.log(phoneDirectory);
+    for(let j=2*i+1;j<test.length;j++)
+    {
+        if(phoneDirectory[test[j]]!== undefined)
+         console.log(test[j]+'='+phoneDirectory[test[j]]);
+         else
+         console.log("Not found");
+    }
+
+} 
+map(hello)
+    
+    </script>
+</body>
+</html>
