@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = Number (prompt("Enter a value"));
+        binaryval = n.toString(2);
+        console.log(binaryval);
+        let bin_arr = binaryval.split("");;
+        console.log(bin_arr);
+        let cur = 0;
+        let max = 0;
+        
+        for (var i = 0, len = bin_arr.length; i < len; i++) {
+                if (bin_arr[i] == 1)
+                    cur++;
+                else if (bin_arr[i] == 0) {
+                    if (cur > max)
+                        max = cur;
+                        cur = 0;
+                }
+            }
+            if (cur > max){
+                    max = cur;}
+                    console.log(max);
+    </script>
+</body>
+</html>
