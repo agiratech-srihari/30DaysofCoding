@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student {
+    constructor(testScores){
+        this.score=testScores;
+    }
+    calculate(){
+        let div=this.score.length;
+        let sum;
+        sum = this.score.reduce((cur,add)=>{
+        sum = cur+add;
+        return sum
+    })
+          let avg= (sum/this.score.length);
+        //   return avg;
+        if (avg<=100 && avg>=90)
+            {
+            return "O";
+        }else if(avg<90 && avg>=80)
+            {
+             return "E";
+        }
+        else if(avg>=70 && avg<80)
+            {
+             return "A";
+        }
+        else if(avg<70 && avg>=55)
+            {
+             return "P";
+        }
+         else if(avg<55 && avg>=40)
+            {
+             return "D";
+        }
+        else{
+             return "T";
+        }
+    }
+}
+    let student= new Student([100,80]);
+    console.log(student.calculate());
+    </script>
+</body>
+</html>
