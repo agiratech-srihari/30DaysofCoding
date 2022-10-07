@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Solution() {
+        this.que = [];
+        this.stack = [];
+        this.popCharacter = function () {
+          return this.stack.pop();
+        };
+        this.pushCharacter = function (char) {
+          this.stack.push(char);
+        };
+        this.dequeueCharacter = function () {
+          return this.que.shift();
+        };
+        this.enqueueCharacter = function (char) {
+          this.que.push(char);
+        };
+      }
+
+      function main() {
+        var s = prompt('enter a string');
+        var len = s.length;
+        var obj = new Solution();
+        for (var i = 0; i < len; i++) {
+          obj.pushCharacter(s.charAt(i));
+          obj.enqueueCharacter(s.charAt(i));
+        }
+
+        var isPalindrome = true;
+
+        for (var i = 0; i < len / 2; i++) {
+          if (obj.popCharacter() != obj.dequeueCharacter()) {
+            isPalindrome = false;
+            break;
+          }
+        }
+
+        if (isPalindrome) console.log("The word, " + s + ", is a palindrome.");
+        else console.log("The word, " + s + ", is not a palindrome.");
+      }
+      main();
+    </script>
+  </body>
+</html>
